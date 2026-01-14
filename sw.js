@@ -1,11 +1,11 @@
 // Service Worker for offline functionality
 const CACHE_NAME = 'pharmacy-inventory-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/app.js',
-    '/manifest.json'
+    '/mdp-meds-tracker/',
+    '/mdp-meds-tracker/index.html',
+    '/mdp-meds-tracker/style.css',
+    '/mdp-meds-tracker/app.js',
+    '/mdp-meds-tracker/manifest.json'
 ];
 
 // Install event - cache static assets
