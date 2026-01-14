@@ -1,0 +1,389 @@
+/* ===========================
+   Reset and Base Styles
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 20px;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+/* ===========================
+   Screen Management
+   =========================== */
+.screen {
+    display: none;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* ===========================
+   Header Styles
+   =========================== */
+header {
+    background-color: #4A90E2;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1,
+header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ===========================
+   Button Styles
+   =========================== */
+.btn {
+    padding: 15px 25px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 100px;
+}
+
+.btn-primary {
+    background-color: #5CB85C;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4CAE4C;
+}
+
+.btn-secondary {
+    background-color: #6C757D;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5A6268;
+}
+
+.btn-danger {
+    background-color: #D9534F;
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+    padding: 18px;
+    font-size: 22px;
+}
+
+.btn-danger:hover {
+    background-color: #C9302C;
+}
+
+/* ===========================
+   Inventory List
+   =========================== */
+.inventory-list {
+    padding: 20px;
+    flex: 1;
+}
+
+.inventory-item {
+    background-color: #f8f9fa;
+    border-left: 6px solid #4A90E2;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.inventory-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-item.medicine {
+    border-left-color: #4A90E2;
+}
+
+.inventory-item.supply {
+    border-left-color: #5CB85C;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.item-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.item-category {
+    background-color: #4A90E2;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+.item-category.supply {
+    background-color: #5CB85C;
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.item-quantity {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.item-percentage {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.percentage-high {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.percentage-medium {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.percentage-low {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* ===========================
+   Empty State
+   =========================== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+.empty-state p {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+/* ===========================
+   Detail Screen
+   =========================== */
+.detail-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.detail-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.detail-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #4A90E2;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 20px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.detail-value {
+    font-weight: 500;
+    color: #333;
+}
+
+.breakdown-section {
+    background-color: #e9f5ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.breakdown-section h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #4A90E2;
+}
+
+/* ===========================
+   Form Styles
+   =========================== */
+.item-form {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4A90E2;
+}
+
+.medicine-fields,
+.supply-fields {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #dee2e6;
+}
+
+/* ===========================
+   Modal Styles
+   =========================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 15px;
+    font-size: 22px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #4A90E2;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 600px) {
+    header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    header h1,
+    header h2 {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
