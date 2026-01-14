@@ -261,6 +261,14 @@ function confirmSubtraction() {
         // Subtract from baggies first, then bottles
         let remaining = amount;
         
+        // Get current total
+        const currentTotal = (item.bottleCount * item.unitsPerBottle) + (item.baggieCount * item.unitsPerBaggie);
+        
+        if (currentTotal < remaining) {
+            alert('Not enough units in stock!');
+            return;
+        }
+        
         // Calculate units in baggies
         let baggieUnits = item.baggieCount * item.unitsPerBaggie;
         
@@ -268,7 +276,6 @@ function confirmSubtraction() {
             // Can subtract entirely from baggies
             baggieUnits -= remaining;
             item.baggieCount = Math.floor(baggieUnits / item.unitsPerBaggie);
-            // Handle partial baggie if any
             remaining = 0;
         } else {
             // Subtract all baggies, continue with bottles
@@ -277,16 +284,9 @@ function confirmSubtraction() {
             
             // Subtract from bottles
             let bottleUnits = item.bottleCount * item.unitsPerBottle;
-            
-            if (bottleUnits >= remaining) {
-                bottleUnits -= remaining;
-                item.bottleCount = Math.floor(bottleUnits / item.unitsPerBottle);
-                remaining = 0;
-            } else {
-                // Not enough in stock
-                alert('Not enough units in stock!');
-                return;
-            }
+            bottleUnits -= remaining;
+            item.bottleCount = Math.floor(bottleUnits / item.unitsPerBottle);
+            remaining = 0;
         }
     } else {
         // Supply item
