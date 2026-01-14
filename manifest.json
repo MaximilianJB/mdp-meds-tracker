@@ -1,0 +1,22 @@
+{
+    "name": "Pharmacy Inventory",
+    "short_name": "PharmInventory",
+    "description": "Offline pharmacy and supply inventory tracker",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4A90E2",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect fill='%234A90E2' width='192' height='192'/%3E%3Cpath fill='%23ffffff' d='M96 40c-8.8 0-16 7.2-16 16v24H56c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16h24v24c0 8.8 7.2 16 16 16h40c8.8 0 16-7.2 16-16v-24h24c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16h-24V56c0-8.8-7.2-16-16-16H96z'/%3E%3C/svg%3E",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect fill='%234A90E2' width='512' height='512'/%3E%3Cpath fill='%23ffffff' d='M256 106c-23.5 0-42.7 19.2-42.7 42.7v64H149.3c-23.5 0-42.7 19.2-42.7 42.7v106.6c0 23.5 19.2 42.7 42.7 42.7h64v64c0 23.5 19.2 42.7 42.7 42.7h106.7c23.5 0 42.7-19.2 42.7-42.7v-64h64c23.5 0 42.7-19.2 42.7-42.7V255.3c0-23.5-19.2-42.7-42.7-42.7h-64v-64c0-23.5-19.2-42.7-42.7-42.7H256z'/%3E%3C/svg%3E",
+            "sizes": "512x512",
+            "type": "image/svg+xml"
+        }
+    ]
+}

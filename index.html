@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Offline pharmacy and supply inventory tracker">
+    <meta name="theme-color" content="#4A90E2">
+    <title>Pharmacy Inventory</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Screen: Inventory List -->
+    <div id="main-screen" class="screen active">
+        <header>
+            <h1>Pharmacy Inventory</h1>
+            <button id="add-item-btn" class="btn btn-primary">+ Add Item</button>
+        </header>
+        
+        <div id="inventory-list" class="inventory-list">
+            <!-- Items will be dynamically added here -->
+        </div>
+        
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <p>No inventory items yet.</p>
+            <p>Tap the "+ Add Item" button to get started.</p>
+        </div>
+    </div>
+
+    <!-- Detail Screen: View/Edit Item -->
+    <div id="detail-screen" class="screen">
+        <header>
+            <button id="back-btn" class="btn btn-secondary">← Back</button>
+            <h2 id="detail-title">Item Details</h2>
+            <button id="edit-item-btn" class="btn btn-primary">Edit</button>
+        </header>
+        
+        <div id="detail-content" class="detail-content">
+            <!-- Item details will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Add/Edit Form Screen -->
+    <div id="form-screen" class="screen">
+        <header>
+            <button id="cancel-form-btn" class="btn btn-secondary">Cancel</button>
+            <h2 id="form-title">Add Item</h2>
+            <button id="save-form-btn" class="btn btn-primary">Save</button>
+        </header>
+        
+        <form id="item-form" class="item-form">
+            <div class="form-group">
+                <label for="category">Category *</label>
+                <select id="category" name="category" required>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Supply">Supply</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="startingQuantity">Starting Quantity *</label>
+                <input type="number" id="startingQuantity" name="startingQuantity" min="0" required>
+            </div>
+
+            <!-- Medicine-specific fields -->
+            <div id="medicine-fields" class="medicine-fields">
+                <div class="form-group">
+                    <label for="drugName">Drug Name *</label>
+                    <input type="text" id="drugName" name="drugName">
+                </div>
+
+                <div class="form-group">
+                    <label for="dosage">Dosage *</label>
+                    <input type="text" id="dosage" name="dosage" placeholder="e.g., 500mg">
+                </div>
+
+                <div class="form-group">
+                    <label for="form">Form *</label>
+                    <input type="text" id="form" name="form" placeholder="e.g., Tablet, Capsule">
+                </div>
+
+                <div class="form-group">
+                    <label for="bottleCount">Bottle Count *</label>
+                    <input type="number" id="bottleCount" name="bottleCount" min="0" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="unitsPerBottle">Units per Bottle *</label>
+                    <input type="number" id="unitsPerBottle" name="unitsPerBottle" min="0" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="baggieCount">Baggie Count *</label>
+                    <input type="number" id="baggieCount" name="baggieCount" min="0" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="unitsPerBaggie">Units per Baggie *</label>
+                    <input type="number" id="unitsPerBaggie" name="unitsPerBaggie" min="0" value="0">
+                </div>
+            </div>
+
+            <!-- Supply-specific field (currentQuantity) -->
+            <div id="supply-fields" class="supply-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="currentQuantity">Current Quantity *</label>
+                    <input type="number" id="currentQuantity" name="currentQuantity" min="0">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Subtract Modal -->
+    <div id="subtract-modal" class="modal">
+        <div class="modal-content">
+            <h3>Subtract Units</h3>
+            <p id="subtract-message">How many units would you like to subtract?</p>
+            <input type="number" id="subtract-amount" min="1" placeholder="Enter amount">
+            <div class="modal-actions">
+                <button id="cancel-subtract-btn" class="btn btn-secondary">Cancel</button>
+                <button id="confirm-subtract-btn" class="btn btn-primary">Subtract</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
